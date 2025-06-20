@@ -25,6 +25,31 @@ The dashboard integrates with Qlik's embedded analytics platform to visualize pr
 
 ## Getting Started
 
+### Qlik Setup
+
+1. Upload the included QVF file to your Qlik Sense tenant:
+   - Log in to your Qlik Cloud tenant
+   - Navigate to the Content section
+   - Click on "Add new" and select "Upload app"
+   - Select the QVF file from the `deps/Hackathon.qvf` file
+   - Note the generated App ID after upload
+
+2. Create an OAuth client in your Qlik Cloud tenant:
+   - Go to Settings > Integration > OAuth clients
+   - Create a new OAuth client
+   - Set the redirect URI to `https://localhost:5173/auth/callback`
+   - Copy the generated Client ID
+
+3. Update the configuration in the code:
+   - Open `src/App.tsx`
+   - Update the `hostConfig` object with:
+     - Your Qlik tenant hostname
+     - Your OAuth Client ID
+   - Open `src/components/Dashboard.tsx` 
+   - Update all `appId` properties with your uploaded app's ID
+
+### Run the Application
+
 1. Clone this repository
 2. Install dependencies:
    ```bash
@@ -38,7 +63,7 @@ The dashboard integrates with Qlik's embedded analytics platform to visualize pr
 
 ## Authentication
 
-The application uses OAuth2 for authentication with Qlik Cloud. Make sure your Qlik client ID and redirect URI are properly configured in the application.
+The application uses OAuth2 for authentication with Qlik Cloud. The redirect URI is configured to `https://localhost:5173/auth/callback`. Make sure this matches the redirect URI in your OAuth client settings.
 
 ## Available Scripts
 
