@@ -9,6 +9,8 @@ function App() {
     clientId: 'ddc1fc94c0226eff09d5bae4f9293a6e',
     authType: 'oauth2',
     redirectUri: 'https://localhost:5173/auth/callback',
+    autoRedirect: true,
+
   }
 
   return (
