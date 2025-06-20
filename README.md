@@ -1,6 +1,6 @@
 # Shell AI Dashboard POC
 
-![Shell Logo](/public/shell-pecten.svg)
+<img src="/public/shell-pecten.svg" alt="Shell Logo" width="60" height="60">
 
 ## Overview
 
