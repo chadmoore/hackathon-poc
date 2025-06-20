@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication Callback</title>
+    <script>
+      // Inject environment variables at build time
+      document.addEventListener('DOMContentLoaded', function() {
+        const script = document.createElement('script');
+        script.crossOrigin = "anonymous";
+        script.type = "application/javascript";
+        script.dataset.host = "https://chadmoore.us.qlikcloud.com";
+        script.src = "https://cdn.jsdelivr.net/npm/@qlik/embed-web-components@1/dist/oauth-callback.js";
+        document.head.appendChild(script);
+      });
+    </script>
+  </head>
+  <body>
+    <div style="display: flex; height: 100vh; align-items: center; justify-content: center; font-family: sans-serif;">
+      <div style="text-align: center; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 0.5rem; background-color: white;">
+        <div style="margin-bottom: 1rem; font-size: 1.5rem; font-weight: bold;">Processing Authentication</div>
+        <p style="color: #666;">You will be redirected automatically.</p>
+      </div>
+    </div>
+  </body>
+</html>
